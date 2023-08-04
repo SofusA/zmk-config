@@ -40,7 +40,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ Å        │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        LBRC)
+            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        LBKT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ Æ        │ Ø        │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp SEMI  &kp SQT    &kp ENTER
@@ -56,11 +56,11 @@
         //│          │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          │
             &trans     &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ TAB      │
-            &trans     &kp N4     &kp N5     &kp N6     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp TAB
+        //│          │  4       │  5       │  6       │  %       │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ TAB      │
+            &trans     &kp N4     &kp N5     &kp N6     &kp PRCNT      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  7       │  8       │  9       │  0       │   │          │ VOL UP   │ VOL DOWN │PLAY PAUSE│          │
-            &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_UP &kp C_VOL_DN &trans    &trans
+        //│          │  7       │  8       │  9       │  0       │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
+            &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -70,14 +70,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+        //│          │  [       │  {       │  =       │ )        │   │  ^       │  (       │  )       │  &       │  ~       │
+            &trans     &kp LBKT   &kp LBRC   &kp RPAR  &kp LPAR        &kp ASTRK  &kp LPAR   &kp RPAR   &kp CARET &kp TILDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+        //│  ´       │  @       │  !       │  ?       │  %       │   │  *       │  -       │  =       │  /       │  *       │
+            &kp EQUAL  &kp AT     &kp EXCL   &kp UNDER  &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+        //│  `       │  ^       │          │ +        │          │   │  &       │  _       │  +       │  │       │ '        │
+            &kp PLUS   &kc RBRC   &trans     &kp MINUS  &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
