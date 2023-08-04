@@ -77,7 +77,7 @@
             &kp EQUAL  &kp AT     &kp EXCL   &kp UNDER  &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  `       │  ^       │          │ +        │          │   │  &       │  _       │  +       │  │       │ '        │
-            &kp PLUS   &kc RBRC   &trans     &kp MINUS  &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &BSLH
+            &kp PLUS   &kc RBRC   &trans     &kp MINUS  &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
