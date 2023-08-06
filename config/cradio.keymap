@@ -23,6 +23,15 @@
         };
     };
 
+    macros {
+        tilde: tilde {
+            label = "macro_tilde";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R_ALT &kp RBKT &kp R_ALT &kp RBKT>;
+        };
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -71,7 +80,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  [       │          │  =       │ )        │   │  (       │  (       │  )       │  &       │  ~       │
-            &kp LS(N3)     &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &kp NUHS
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │          │  !       │  ?       │  %       │   │  {       │  -       │  =       │  /       │  *       │
           &kp EQUAL  &kp RA(EQUAL) &kp EXCL &kp UNDER  &kp RA(N0)   &kp RA(N7) &kp LS(DOT) &kp LS(COMMA) &kp AMPS   &kp PIPE
@@ -88,13 +97,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &kp RBKT  &kp LBKT    &trans     &trans    &sys_reset
+           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &kp GRAVE   &kp INT3   &trans     &trans    &bootloader
+          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &kp APOS  &kp PIPE2 &trans     &trans     &trans
+            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
