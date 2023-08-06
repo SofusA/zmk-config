@@ -28,7 +28,7 @@
             label = "macro_tilde";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp R_ALT &kp RBKT &kp R_ALT &kp RBKT>;
+            bindings = <&kp RA(RBKT) &kp RA(RBKT)>;
         };
     };
 
