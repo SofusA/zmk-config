@@ -92,7 +92,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  #       │  [       │  @       │  =       │ )        │   │  (       │  (       │  )       │  &       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &tildet
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │  |       │  !       │  ?       │  %       │   │  {       │  :       │  ;       │  /       │  *       │
           &kp EQUAL  &kp RA(EQUAL) &kp EXCL &kp UNDER  &kp RA(N0)   &kp RA(N7) &kp LS(DOT) &kp LS(COMMA) &kp AMPS   &kp PIPE
