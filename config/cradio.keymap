@@ -30,6 +30,18 @@
             #binding-cells = <0>;
             bindings = <&kp RA(RBKT) &kp RA(RBKT)>;
         };
+        btick: btick {
+            label = "macro_btick";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS &kp PLUS>;
+        };
+        hat: hat {
+            label = "macro_hat";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RBRC &kp RBRC>;
+        };
     };
 
     conditional_layers {
@@ -79,14 +91,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │          │  =       │ )        │   │  (       │  (       │  )       │  &       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &tilde
+        //│  #       │  [       │  @       │  =       │ )        │   │  (       │  (       │  )       │  &       │  ~       │
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &tildet
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │          │  !       │  ?       │  %       │   │  {       │  -       │  =       │  /       │  *       │
+        //│  ´       │  |       │  !       │  ?       │  %       │   │  {       │  :       │  ;       │  /       │  *       │
           &kp EQUAL  &kp RA(EQUAL) &kp EXCL &kp UNDER  &kp RA(N0)   &kp RA(N7) &kp LS(DOT) &kp LS(COMMA) &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  ^       │          │ +        │  ]       │   │  [       │          │          │  "       │ '        │
-            &kp PLUS   &kp RBRC  &kp RA(NUBS) &kp MINUS &kp RA(N9)    &kp RA(N8) &kp FSLH &kp LS(FSLH) &kp LS(N2) &kp BSLH
+        //│  `       │  ^       │  \       │ +        │  ]       │   │  [       │  -       │ _        │  "       │ '        │
+            &btick     &hat     &kp RA(NUBS) &kp MINUS &kp RA(N9)      &kp RA(N8) &kp FSLH &kp LS(FSLH) &kp LS(N2) &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
