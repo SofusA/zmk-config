@@ -70,20 +70,20 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  =       │ )        │   │  ^       │  (       │  )       │  &       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RPAR  &kp LPAR        &kp ASTRK  &kp LPAR   &kp RPAR   &kp CARET &kp TILDE
+        //│          │  [       │          │  =       │ )        │   │  (       │  (       │  )       │  &       │  ~       │
+            &kp LS(N3)     &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &kp RA(RBRC)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │  @       │  !       │  ?       │  %       │   │  *       │  -       │  =       │  /       │  *       │
-            &kp EQUAL  &kp AT     &kp EXCL   &kp UNDER  &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp AMPS   &kp PIPE
+        //│  ´       │          │  !       │  ?       │  %       │   │  {       │  -       │  =       │  /       │  *       │
+          &kp EQUAL  &kp RA(EQUAL) &kp EXCL &kp UNDER  &kp RA(N0)   &kp RA(N7) &kp LS(DOT) &kp LS(COMMA) &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  ^       │          │ +        │          │   │  &       │  _       │  +       │  │       │ '        │
-            &kp PLUS   &kp RBRC   &trans     &kp MINUS  &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &kp BSLH
+        //│  `       │  ^       │          │ +        │  ]       │   │  [       │          │          │  "       │ '        │
+            &kp PLUS   &kp RBRC  &kp RA(NUBS) &kp MINUS &kp RA(N9)    &kp RA(N8) &kp FSLH &kp LS(FSLH) &kp LS(N2) &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-
+        
         tri_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
