@@ -5,24 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
-
 / {
-    behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -60,13 +43,13 @@
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ Å        │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        LBKT)
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  Å       │
+            &kp A,     &kp S,     &kp D,     &kp F      &kp G          &kp H      &kp J,     &kp K,     &kp L,     &kp LBKT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ Æ        │ Ø        │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp SEMI  &kp SQT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 COMMA &kp DOT        &kp SPACE  &lt 1 BSPC
+                                            &lt 2 COMMA &lt 4 DOT      &lt 5 SPACE  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -121,5 +104,39 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+        
+        left_mods {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &trans    &trans          &trans     &trans     &trans     &trans     &trans    
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+           &kp LSHIFT  &kp LALT   &kp LCTRL  &kp LGUI   &trans         &trans     &trans     &trans     &trans     &trans      
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans    &trans      &trans         &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };    
+
+        right_mods {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &trans    &trans          &trans     &trans     &trans     &trans     &trans    
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &trans     &trans         &trans     &kp RGUI   &kp RCTRL  &kp RALT   &kp RSHIFT      
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans    &trans      &trans         &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        }; 
     };
 };
