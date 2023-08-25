@@ -54,7 +54,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  Å       │
-          &td A LSHIFT &td S LALT &td D LCTRL &td F LGUI &kp G          &kp H   &td J RGUI &td K RCTRL &td L RALT &td LBKT RSHIFT
+          &kp Q      &kp W      &kp E      &kp R      &kp T          &kp H   &td J RGUI &td K RCTRL &td L RALT &td LBKT RSHIFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ Æ        │ Ø        │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp SEMI  &kp SQT    &kp ENTER
