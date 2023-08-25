@@ -7,12 +7,61 @@
 
 / {
     behaviors {
-        td: tap_dance {
+        td0: td_shift_left {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp A>, <&kp LSHIFT>;
+        };
+        td1: td_alt_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp S>, <&kp LALT>;
+        };
+        td2: td_ctrl_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp D>, <&kp LCTRL>;
+        };
+        td3: td_gui_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp A>, <&kp LGUI>;
+        };
+        td4: td_gui_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp J>, <&kp RGUI>;
+        };
+        td5: td_ctrl_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp K>, <&kp RCTRL>;
+        };
+        td6: td_alt_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp L>, <&kp RALT>;
+        };
+        td7: td_shift_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RSHIFT>;
         };
     };
 
@@ -54,7 +103,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  Å       │
-          &td A LSHIFT &td S LALT &td D LCTRL &td F LGUI &kp G          &kp H   &td J RGUI &td K RCTRL &td L RALT &td LBKT RSHIFT
+            &td0       &td1       &td2       &td3       &kp G          &kp H      &td4       &td5       &td6       &td7
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ Æ        │ Ø        │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp SEMI  &kp SQT    &kp ENTER
