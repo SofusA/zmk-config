@@ -11,56 +11,56 @@
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_shift_left";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp A>, <&kp LSHIFT>;
         };
         td1: td_alt_left {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_alt_left";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp S>, <&kp LALT>;
         };
         td2: td_ctrl_left {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_ctrl_left";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp D>, <&kp LCTRL>;
         };
         td3: td_gui_left {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_gui_left";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp A>, <&kp LGUI>;
         };
         td4: td_gui_right {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_gui_right";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp J>, <&kp RGUI>;
         };
         td5: td_ctrl_right {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_ctrl_right";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp K>, <&kp RCTRL>;
         };
         td6: td_alt_right {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_alt_right";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp L>, <&kp RALT>;
         };
         td7: td_shift_right {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_shift_right";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp LBKT>, <&kp RSHIFT>;
         };
     };
