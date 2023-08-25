@@ -10,7 +10,7 @@
         td: tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
