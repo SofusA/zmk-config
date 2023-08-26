@@ -60,13 +60,13 @@
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ Å        │
-            HRML(A,     S,         D,         F,         G)          HRMR(H,       J,         K,         L,        LBKT)
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ TAB      │
+            HRML(A,     S,         D,         F,         G)          HRMR(H,       J,         K,         L,        TAB)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ Æ        │ Ø        │ ENTER    │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp SEMI  &kp SQT    &kp ENTER
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ?      │ . !      │ ENTER    │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M &ht COMMA UNDER &ht DOT EXCL &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 COMMA &kp DOT        &kp SPACE  &lt 1 BSPC
+                                          &lt 2 SPACE &ht ESC LCTRL &ht DEL RSHIFT &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -77,13 +77,13 @@
         //│          │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ UP       │ PAGE UP  │          │
             &trans     &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp UARW   &kp PG_UP  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  4       │  5       │  6       │  %       │   │ END      │ LEFT     │ DOWN     │ RIGHT    │ TAB      │
-            &trans     &kp N4     &kp N5     &kp N6     &kp PRCNT      &kp END    &kp LARW   &kp DARW   &kp RARW   &kp TAB
+        //│          │  4       │  5       │  6       │  %       │   │ END      │ LEFT     │ DOWN     │ RIGHT    │          │
+            &trans     &kp N4     &kp N5     &kp N6     &kp PRCNT      &kp END    &kp LARW   &kp DARW   &kp RARW   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  7       │  8       │  9       │  0       │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
             &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
+                                             &trans     &trans        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -94,13 +94,13 @@
         //│  #       │  [       │  @       │  =       │ )        │   │  (       │  (       │  )       │  &       │  ~       │
             &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LPAR      &kp ASTRK  &kp NUBS   &kp LS(NUBS) &kp CARET &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │  |       │  !       │  ?       │  %       │   │  {       │  :       │  ;       │  /       │  *       │
-          &kp EQUAL  &kp RA(EQUAL) &kp EXCL &kp UNDER  &kp RA(N0)   &kp RA(N7) &kp LS(DOT) &kp LS(COMMA) &kp AMPS   &kp PIPE
+        //│  ´       │  |       │  "       │  '       │  %       │   │  {       │  -       │  _       │  /       │  *       │
+          &kp EQUAL  &kp RA(EQUAL) &kp LS(N2) &kp BSLH    &kp RA(N0)   &kp RA(N7) &kp FSLH   &kp LS(FSLH) &kp AMPS &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  ^       │  \       │ +        │  ]       │   │  [       │  -       │ _        │  "       │ '        │
-            &btick     &hat     &kp RA(NUBS) &kp MINUS &kp RA(N9)      &kp RA(N8) &kp FSLH &kp LS(FSLH) &kp LS(N2) &kp BSLH
+        //│  `       │  ^       │  \       │ +        │  ]       │   │  [       │  å       │ æ        │  ø       │          │
+            &btick     &hat     &kp RA(NUBS) &kp MINUS &kp RA(N9)      &kp RA(N8) &kp LBKT &kp SEMI     &kp SQT    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &kp DEL
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
