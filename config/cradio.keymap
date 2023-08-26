@@ -6,8 +6,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4,k5) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4 &ht LS(LGUI) k5
-#define HRMR(k1,k2,k3,k4,k5) &ht RS(RGUI) k1 &ht RGUI k2  &ht RCTRL k3  &ht RALT k4 &ht RSHFT k5
+#define HRML(k1,k2,k3,k4,k5) &ht LALT k1     &ht LGUI k2 &ht LS(LGUI) k3
+#define HRMR(k1,k2,k3,k4,k5) &ht RS(RGUI) k1 &ht RGUI k2 &ht RALT k3
 
 / {
     behaviors {
@@ -61,7 +61,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ TAB      │
-            HRML(A,     S,         D,         F,         G)          HRMR(H,       J,         K,         L,        TAB)
+            &kp A      &kp S     HRML(D,      F,         G)          HRMR(H,       J,         K)         &kp L     &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ?      │ . !      │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M &ht COMMA UNDER &ht DOT EXCL &kp ENTER
