@@ -119,14 +119,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  #       │  [       │  @       │  =       │  :       │   │  (       │  <       │  %       │  &       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LS(DOT) &mparenthesis &kp NUBS   &kp PRCNT   &kp CARET  &tilde
+        //│  #       │  $       │  @       │  =       │  :       │   │  (       │  <       │  ?       │  &       │  ~       │
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LS(DOT) &mparenthesis &kp NUBS   &kp UNDER   &kp CARET  &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │  |       │  "       │  '       │  ;       │   │  {       │  -       │  _       │  /       │  *       │
-          &kp EQUAL  &kp RA(EQUAL) &kp LS(N2) &kp BSLH  &kp LS(COMMA)     &mbrackets  &kp FSLH   &kp LS(FSLH) &kp AMPS &kp PIPE
+          &kp EQUAL  &kp RA(EQUAL) &kp LS(N2) &kp BSLH  &kp LS(COMMA) &mbrackets  &kp FSLH   &kp LS(FSLH) &kp AMPS &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  ^       │  \       │ +        │  %       │   │  [       │  å       │ æ        │  ø       │          │
-            &btick     &hat     &kp RA(NUBS) &kp MINUS  &kp PRCNT     &mhbrackets &kp LBKT &kp SEMI     &kp SQT    &trans
+        //│  `       │  ^       │  \       │ +        │  %       │   │  [       │  å       │ æ        │  ø       │  !       │
+            &btick     &hat     &kp RA(NUBS) &kp MINUS  &kp PRCNT     &mhbrackets &kp LBKT &kp SEMI     &kp SQT    &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
