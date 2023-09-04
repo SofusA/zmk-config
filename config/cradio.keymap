@@ -119,7 +119,7 @@
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ TAB      │
             &kp A      &kp S     HRML(D,      F,         G)          HRMR(H,       J,         K)        &kp L     &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ?      │ . !      │ ENTER    │
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  ,       │  .        │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                           &lt 2 SPACE &ht LCTRL ESC &ht RSHIFT DEL &lt 1 BSPC
@@ -148,7 +148,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  #       │  $       │  @       │  =       │  :       │   │  (       │  <       │  ?       │  &       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LS(DOT) &mparenthesis &kp NUBS   &kp UNDER   &kp CARET  &tilde
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LS(DOT) &mparenthesis &mgreater  &kp UNDER  &kp CARET  &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │  |       │  "       │  '       │  ;       │   │  {       │  -       │  _       │  /       │  *       │
           &kp EQUAL  &kp RA(EQUAL) &kp LS(N2) &kp BSLH  &kp LS(COMMA) &mbrackets  &kp FSLH   &kp LS(FSLH) &kp AMPS &kp PIPE
