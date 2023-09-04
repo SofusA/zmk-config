@@ -147,14 +147,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  #       │  $       │  @       │  =       │  :       │   │  (       │  <       │  ?       │  &       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp LS(DOT) &mparenthesis &mgreater  &kp UNDER  &kp CARET  &tilde
+        //│  #       │  $       │  @       │  =       │  %       │   │  (       │  <       │  ?       │  +       │  ~       │
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT   &mparenthesis &mgreater  &kp UNDER  &kp MINUS  &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │  |       │  "       │  '       │  ;       │   │  {       │  -       │  _       │  /       │  *       │
-          &kp EQUAL  &kp RA(EQUAL) &kp LS(N2) &kp BSLH  &kp LS(COMMA) &mbrackets  &kp FSLH   &kp LS(FSLH) &kp AMPS &kp PIPE
+        //│  ´       │  |       │  "       │  &       │  ;       │   │  {       │  - _     │  !       │  /       │  *       │
+            &mticks  &kp RA(EQUAL) &mquotes  &kp CARET &mcolon       &mbrackets  &kp FSLH   &kp EXCL   &mslash    &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  ^       │  \       │ +        │  %       │   │  [       │  å       │ æ        │  ø       │  !       │
-            &btick     &hat     &kp RA(NUBS) &kp MINUS  &kp PRCNT     &mhbrackets &kp LBKT &kp SEMI     &kp SQT    &kp EXCL
+        //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │  ^       │
+            &trans     &trans     &trans     &trans     &trans        &mhbrackets &kp LBKT  &kp SEMI    &kp SQT    &hat
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
