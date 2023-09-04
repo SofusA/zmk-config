@@ -70,6 +70,34 @@
             bindings = <&kp NUBS>, <&kp LS(NUBS)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        mslash: mslash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "morph_slash";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp RA(NUBS)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };    
+        mquotes: mquotes {
+            compatible = "zmk,behavior-mod-morph";
+            label = "morph_quotes";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N2)>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mticks: mticks {
+            compatible = "zmk,behavior-mod-morph";
+            label = "morph_ticks";
+            #binding-cells = <0>;
+            bindings = <&btick>, <&kp EQUAL>;|
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        mcolon: mcolon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "morph_colon";
+            #binding-cells = <0>;
+            bindings = <&kp LS(COMMA)>, <&kp LS(DOT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     conditional_layers {
