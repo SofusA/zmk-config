@@ -4,13 +4,20 @@
 
 / {
     behaviors {
-        &sl {
-            release-after-ms = <5000>;
-        };
-
-        &sk {
-            release-after-ms = <5000>;
-        };
+      sks: sticky_key_slow {
+        compatible = "zmk,behavior-sticky-key";
+        label = "sticky_key_slow";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <5000>;
+      };
+      sls: sticky_layer_slow {
+        compatible = "zmk,behavior-sticky-layer";
+        label = "sticky_layer_slow";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <5000>;
+      };
     };
 
     macros {
