@@ -123,9 +123,9 @@
             &mticks &kp RA(EQUAL) &mquotes  &kp LS(DOT) &mcolon       &mbrackets  &kp FSLH   &kp CARET  &mslash    &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
-            &trans     &sk LALT   &sk LCTRL  &sk LSHFT  &sk LGUI      &mhbrackets &kp LBKT  &kp SEMI    &kp SQT    &trans
+            &trans     &sk LALT   &sk LCTRL  &sk LSHFT  &trans       &mhbrackets  &kp LBKT  &kp SEMI    &kp SQT    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 2      &to 0          &trans     &kp DEL
+                                             &to 2      &kp F13        &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
