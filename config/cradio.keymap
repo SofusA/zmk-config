@@ -125,7 +125,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  ,       │  .       │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &kp ESC        &sl 1      &kp BSPC
+                                             &kp SPACE  &kp ESC        &sls 1      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -140,7 +140,7 @@
             &mticks &kp RA(EQUAL) &mquotes  &kp LS(DOT) &mcolon       &mbrackets  &kp FSLH   &kp CARET  &mslash    &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
-            &trans     &sk LALT   &sk LCTRL  &sk LSHFT  &sk LGUI      &mhbrackets &kp LBKT  &kp SEMI    &kp SQT    &trans
+            &trans     &sks LALT  &sks LCTRL &sks LSHFT &sks LGUI      &mhbrackets &kp LBKT  &kp SEMI    &kp SQT    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 2      &to 0          &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
