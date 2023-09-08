@@ -3,23 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    behaviors {
-      sks: sticky_key_slow {
-        compatible = "zmk,behavior-sticky-key";
-        label = "sticky_key_slow";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <5000>;
-      };
-      sls: sticky_layer_slow {
-        compatible = "zmk,behavior-sticky-layer";
-        label = "sticky_layer_slow";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <5000>;
-      };
-    };
-
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -125,7 +108,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  ,       │  .       │ ENTER    │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &kp ESC        &sls 1      &kp BSPC
+                                             &kp SPACE  &kp ESC        &sl 1      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
