@@ -1,22 +1,14 @@
-// Copyright (c) 2022 The ZMK Contributors
-// SPDX-License-Identifier: MIT
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <200>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
+    &sl {
+        release-after-ms = <5000>;
+    };
+
+    &sk {
+        release-after-ms = <5000>;
     };
 
     macros {
@@ -139,7 +131,7 @@
             &mticks &kp RA(EQUAL) &mquotes  &kp LS(DOT) &mcolon       &mbrackets  &kp FSLH   &kp CARET  &mslash    &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
-       &bootloader     &sk LALT   &sk LCTRL  &sk LSHFT  &sk LGUI      &mhbrackets &kp LBKT  &kp SEMI    &kp SQT    &bootloader
+            &trans     &sk LALT   &sk LCTRL  &sk LSHFT  &sk LGUI      &mhbrackets &kp LBKT  &kp SEMI    &kp SQT    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 2      &to 0          &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
