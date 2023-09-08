@@ -11,7 +11,7 @@
         &sk {
             release-after-ms = <5000>;
         };
-    }
+    };
 
     macros {
         tilde: tilde {
