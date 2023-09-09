@@ -3,97 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    macros {
-        tilde: tilde {
-            label = "macro_tilde";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(RBKT) &kp RA(RBKT)>;
-        };
-        btick: btick {
-            label = "macro_btick";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp PLUS &kp PLUS>;
-        };
-        hat: hat {
-            label = "macro_hat";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RBRC &kp RBRC>;
-        };
-        mparenthesis: mparenthesis {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_parenthesis";
-            #binding-cells = <0>;
-            bindings = <&kp ASTRK>, <&kp LPAR>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };        
-        mbrackets: mbrackets {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_brackets";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N7)>, <&kp RA(N0)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mhbrackets: mhbrackets {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_hbrackets";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N8)>, <&kp RA(N9)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mgreater: mgreater {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_greater";
-            #binding-cells = <0>;
-            bindings = <&kp NUBS>, <&kp LS(NUBS)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mslash: mslash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_slash";
-            #binding-cells = <0>;
-            bindings = <&kp AMPS>, <&kp RA(NUBS)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };    
-        mquotes: mquotes {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_quotes";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N2)>, <&kp BSLH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mticks: mticks {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_ticks";
-            #binding-cells = <0>;
-            bindings = <&btick>, <&kp EQUAL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mcolon: mcolon {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_colon";
-            #binding-cells = <0>;
-            bindings = <&kp LS(COMMA)>, <&kp LS(DOT)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mtilde: mtilde {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_tilde";
-            #binding-cells = <0>;
-            bindings = <&tilde>, <&hat>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        mqexcl: mqe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "morph_qe";
-            #binding-cells = <0>;
-            bindings = <&kp UNDER>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -102,47 +11,13 @@
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  TAB     │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp TAB
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │          │
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp F5
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  ,       │  .       │ ENTER    │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │          │          │          │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp F2     &kp F3     &kp F4
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &kp ESC        &sl 1      &kp BSPC
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        symbol_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  #       │  $       │  @       │  =       │  %       │   │  (       │  <       │  ?       │  +       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT   &mparenthesis &mgreater  &mqexcl    &kp MINUS  &mtilde
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │  |       │  "       │  :       │  ;       │   │  {       │  - _     │ &        │  /       │  *       │
-            &mticks &kp RA(EQUAL) &mquotes  &kp LS(DOT) &mcolon       &mbrackets  &kp FSLH   &kp CARET  &mslash    &kp PIPE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
-            &trans     &sk LALT   &sk LCTRL  &sk LSHFT  &trans       &mhbrackets  &kp LBKT  &kp SEMI    &kp SQT    &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 2      &kp F1        &trans     &kp DEL
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        number_navigation_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ UP       │ PAGE UP  │          │ 
-            &to 3      &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp UARW   &kp PG_UP  &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  4       │  5       │  6       │          │   │ END      │ LEFT     │ DOWN     │ RIGHT    │          │
-            &trans     &kp N4     &kp N5     &kp N6     &trans         &kp END    &kp LARW   &kp DARW   &kp RARW   &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  7       │  8       │  9       │  0       │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
-            &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to 0          &trans     &trans
+                                             &kp SPACE  &kp ESC        &lt 1 F1   &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -159,7 +34,7 @@
         //│ GAMING   │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &to 4     &trans     &trans    &bt BT_CLR &bt BT_SEL 2     &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to 0          &trans     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
