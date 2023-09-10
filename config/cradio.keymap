@@ -86,7 +86,7 @@
         //│          │  7       │  8       │  9       │  0       │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
             &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to 0          &trans     &trans
+                                             &trans     &to 0          &kp TAB    &kp ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
