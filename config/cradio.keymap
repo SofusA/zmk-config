@@ -49,8 +49,8 @@
         //│  #       │  $       │  @       │  =       │  %       │   │  (       │  <       │  ?       │  +       │  ~       │
             &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT      &kp ASTRK  &kp NUBS   &kp UNDER  &kp MINUS  &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │  |       │  "       │  :       │  ;       │   │  {       │  -       │ &        │  /       │  *       │
-            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &mcolon      &kp RA(N7)  &kp FSLH   &kp CARET &kp AMPS   &kp PIPE
+        //│  ´       │  |       │  "       │  :       │  ;       │   │  {       │  -       │  &       │  /       │  *       │
+            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp LS(COMMA) &kp RA(N7) &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
             &trans     &sk LALT   &sk LCTRL  &sk LSHFT  &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &trans
