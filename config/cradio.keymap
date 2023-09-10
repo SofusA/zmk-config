@@ -64,7 +64,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  (       │  <       │  !       │          │          │
-            &trans     &trans     &trans     &trand     &trans         &kp LPAR  &kp LS(NUBS) &kp EXCL  &trans     &hat
+            &trans     &trans     &trans     &trans     &trans         &kp LPAR  &kp LS(NUBS) &kp EXCL  &trans     &hat
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  {       │  _       │          │          │          │
             &kp EQUAL  &trans     &kp BSLH   &trans     &trans       &kp RA(N0) &kp LS(FSLH) &trans  &kp RA(NUBS) &trans
