@@ -44,10 +44,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  #       │  $       │  @       │  =       │  %       │   │  (       │  <       │  ?       │  +       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT      &kp ASTRK  &kp NUBS   &kp UNDER  &kp MINUS  &tilde
+            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT      &kp RA(N7)ASTRK  &kp NUBS   &kp UNDER  &kp MINUS  &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  `       │  |       │  "       │  :       │  ;       │   │  {       │  -       │  &       │  /       │  *       │
-            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp LS(COMMA) &kp RA(N7) &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
+            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp LS(COMMA) &kp ASTRK &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
             &trans     &trans     &sk LALT   &sk LCTRL   &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &trans
@@ -61,10 +61,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  (       │  <       │  !       │          │  ^       │
-            &trans     &trans     &trans     &trans     &trans         &kp LPAR  &kp LS(NUBS) &kp EXCL  &trans     &hat
+            &trans     &trans     &trans     &trans     &trans         &kp RA(N0)  &kp LS(NUBS) &kp EXCL  &trans     &hat
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │          │  '       │          │          │   │  {       │  _       │          │ \        │          │
-            &kp EQUAL  &trans     &kp BSLH   &trans     &trans       &kp RA(N0) &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
+            &kp EQUAL  &trans     &kp BSLH   &trans     &trans       &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  Å       │ Æ        │  Ø       │          │
             &trans     &trans     &trans     &trans     &trans       &kp RA(N9) &kp LS(LBKT) &kp LS(SEMI) &kp LS(SQT) &trans
