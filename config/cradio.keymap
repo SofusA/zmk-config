@@ -11,6 +11,27 @@
             tapping-term-ms = <200>;
             bindings = <&kp SPACE>, <&kp DOT>;
         };
+        vins: insert {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Insert";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp K_PASTE>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        ccopy: copy {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Copy";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&kp K_COPY>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        xcut: cut {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Cut";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&kp K_CUT>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
     };
     macros {
         tilde: tilde {
@@ -48,7 +69,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H     &sk LSHIFT  &sk LCTRL  &kp ENTER
+            &kp Z      &xcut      &ccopy     &kp D      &vins          &kp K      &kp H     &sk LSHIFT  &sk LCTRL  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &tdspc     &kp ESC        &sl 1      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -65,7 +86,7 @@
             &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
-            &sk LALT   &trans     &trans     &kp COMMA  &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &kp TAP
+            &sk LALT   &trans     &trans     &kp COMMA  &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &kp TAB
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 3      &kp F1         &sl 2      &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
