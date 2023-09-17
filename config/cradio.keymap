@@ -3,6 +3,15 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        tdspc: tap_dance_space {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SPACE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SPACE>, <&kp DOT>;
+        };
+    };
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -35,13 +44,13 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &sk LSHIFT
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &caps_word
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp ENTER
+            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H     &sk LSHIFT  &sk LCTRL  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &kp ESC        &sl 1      &kp BSPC
+                                             &tdspc     &kp ESC        &sl 1      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -52,11 +61,11 @@
         //│  #       │  $       │  @       │  =       │  %       │   │  (       │  <       │  ?       │  +       │  ~       │
             &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT      &kp RA(N7) &kp NUBS   &kp UNDER  &kp MINUS  &tilde
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  |       │  "       │  :       │  ;       │   │  {       │  -       │  &       │  /       │  *       │
-            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp LS(COMMA) &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
+        //│  `       │  |       │  "       │  :       │          │   │  {       │  -       │  &       │  /       │  *       │
+            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  [       │  å       │ æ        │  ø       │          │
-            &trans     &trans     &sk LALT   &sk LCTRL   &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &trans
+            &sk LALT   &trans     &trans     &kp COMMA  &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 3      &kp F1         &sl 2      &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -69,11 +78,11 @@
         //│          │          │          │          │          │   │  (       │  <       │  !       │          │  ^       │
             &trans     &trans     &trans     &trans     &trans         &kp RA(N0)  &kp LS(NUBS) &kp EXCL  &trans     &hat
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │          │  '       │          │          │   │  {       │  _       │          │ \        │          │
-            &kp EQUAL  &trans     &kp BSLH   &trans     &trans       &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
+        //│  ´       │          │  '       │ ;        │          │   │  {       │  _       │          │ \        │          │
+            &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  [       │  Å       │ Æ        │  Ø       │          │
-            &trans     &trans     &trans     &trans     &trans       &kp RA(N9) &kp LS(LBKT) &kp LS(SEMI) &kp LS(SQT) &trans
+        //│          │          │          │ .        │          │   │  [       │  Å       │ Æ        │  Ø       │          │
+            &trans     &trans     &trans     &kp DOT    &trans       &kp RA(N9) &kp LS(LBKT) &kp LS(SEMI) &kp LS(SQT) &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 2      &kp F1        &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
