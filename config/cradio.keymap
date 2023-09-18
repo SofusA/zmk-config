@@ -3,29 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    behaviors {
-        vins: insert {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Insert";
-            #binding-cells = <0>;
-            bindings = <&kp V>, <&kp K_PASTE>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-        ccopy: copy {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Copy";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&kp K_COPY>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-        xcut: cut {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Cut";
-            #binding-cells = <0>;
-            bindings = <&kp X>, <&kp K_CUT>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-    };
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -45,12 +22,6 @@
             #binding-cells = <0>;
             bindings = <&kp RBRC &kp RBRC>;
         };
-        enterdefault: enterdefault {
-            label = "macro_enterdefault";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp ENTER &to 0>;
-        };
     };
 
     keymap {
@@ -58,13 +29,13 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &caps_word
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &xcut      &ccopy     &kp D      &vins          &kp K      &kp H     &sk LSHIFT  &sk LCTRL  &kp ENTER
+            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H     &sk LSHIFT  &sk LCTRL  &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &kp ESC        &sl 1      &kp BSPC
+                                             &kp SPACE  &lt 3 ESC      &sl 1      &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -79,9 +50,9 @@
             &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  .       │          │   │  [       │  å       │ æ        │  ø       │          │
-            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &kp TAB
+            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 3      &kp F1         &sl 2      &kp DEL
+                                             &trans     &kp F1         &sl 2      &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -90,7 +61,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  }       │  >       │  !       │          │  ^       │
-            &trans     &trans     &trans     &trans     &trans         &kp RA(N0)  &kp LS(NUBS) &kp EXCL &trans    &hat
+            &trans     &trans     &trans     &trans     &trans       &kp RA(N0) &kp LS(NUBS) &kp EXCL   &trans     &hat
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │          │  '       │  ;       │          │   │  )       │  _       │          │ \        │          │
             &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
@@ -98,7 +69,7 @@
         //│          │          │          │  ,       │          │   │  ]       │  Å       │ Æ        │  Ø       │          │
             &trans     &trans     &trans     &kp COMMA  &trans       &kp RA(N9) &kp LS(LBKT) &kp LS(SEMI) &kp LS(SQT) &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 1      &kp F1        &trans     &kp DEL
+                                             &trans     &kp F1         &trans     &kp DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -113,9 +84,9 @@
             &trans     &kp N4     &kp N5     &kp N6     &trans         &kp END    &kp LARW   &kp DARW   &kp RARW   &kp K_FORWARD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  7       │  8       │  9       │  0       │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
-            &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &enterdefault
+            &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 0      &to 0          &kp TAB    &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
