@@ -8,7 +8,7 @@
             label = "leader_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>; 
-            flavor = "hold-preferred"; 
+            flavor = "tap-preferred"; 
             tapping-term-ms = <200>; 
             bindings = <&mo>, <&sl>; 
         };
@@ -46,7 +46,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp SEMI   &kp SQT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &lt 3 ESC      &ht 3 1    &kp BSPC
+                                             &kp SPACE  &kp ESC        &ht 3 1    &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -78,9 +78,9 @@
             &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  ,       │          │   │  ]       │          │          │          │          │
-            &trans     &trans     &trans     &kp COMMA  &trans       &kp RA(N9)   &trans     &trans     &trans     &trans
+            &trans     &trans     &trans     &kp COMMA  &trans       &kp RA(N9)   &trans     &trans     &trans     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp F1         &trans     &kp DEL
+                                             &sk LSHIFT &kp F1         &trans     &sk LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -97,7 +97,7 @@
         //│          │  7       │  8       │  9       │  0       │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
             &trans     &kp N7     &kp N8     &kp N9     &kp N0         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &kp TAB    &kp ENTER 
+                                             &kp TAB    &trans         &trans     &kp ENTER 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
