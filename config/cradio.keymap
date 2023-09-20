@@ -3,6 +3,17 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        ht: hold_tap {
+            label = "leader_hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; 
+            flavor = "hold-preferred"; 
+            tapping-term-ms = <200>; 
+            bindings = <&mo>, <&sl>; 
+        };
+    };
+
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -35,7 +46,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp SEMI   &kp SQT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                       &mt LCTRL SPACE  &lt 3 ESC      &sl 1      &mt LSHIFT BSPC
+                                             &kp SPACE  &lt 3 ESC      &ht 3 1    &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -50,9 +61,9 @@
             &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  .       │          │   │  [       │  å       │ æ        │  ø       │          │
-            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &trans
+            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &kp LBKT  &kp SEMI    &kp SQT    &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp F1         &sl 2      &kp DEL
+                                             &sk LSHIFT &kp F1         &sl 2      &sk LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
