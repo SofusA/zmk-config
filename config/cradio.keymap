@@ -73,7 +73,7 @@
         //│          │          │          │  .       │          │   │  [       │  å       │  æ       │  ø       │          │
             &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &kp LBKT   &kp SEMI   &kp SQT    &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &skq LSHIFT &kp LGUI       &sl 2      &skq LCTRL
+                                            &skq LSHIFT &kp F1         &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
