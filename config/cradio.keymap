@@ -4,7 +4,7 @@
 
 / {
     behaviors {
-        ht: hold_tap {
+        htl: hold_tap_leader {
             label = "leader_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>; 
@@ -56,7 +56,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp SEMI   &kp SQT    &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &kp ESC        &ht 3 1    &kp BSPC
+                                             &kp SPACE  &kp ESC        &htl 3 1   &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -70,8 +70,8 @@
         //│  `       │  |       │  "       │  :       │          │   │  {       │  -       │  &       │  /       │  *       │
             &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │  .       │          │   │  [       │  å       │  æ       │  ø       │          │
-            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &kp LBKT   &kp SEMI   &kp SQT    &kp DEL
+        //│          │          │          │  .       │          │   │  [       │          │          │          │          │
+            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &trans     &trans     &trans     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &skq LSHIFT &kp F1         &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
