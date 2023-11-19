@@ -43,6 +43,18 @@
             #binding-cells = <0>;
             bindings = <&kp RBRC &kp RBRC>;
         };
+        copy: copy {
+            label = "macro_copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+        };
+        paste: paste {
+            label = "macro_paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+        };
     };
 
     keymap {
@@ -82,13 +94,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  }       │  >       │  !       │          │  ^       │
-            &trans     &trans     &trans     &kp K_PASTE &trans        &kp RA(N0) &kp LS(NUBS) &kp EXCL &trans     &hat
+            &trans     &trans     &trans     &paste     &trans        &kp RA(N0) &kp LS(NUBS) &kp EXCL &trans     &hat
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │          │  '       │  ;       │          │   │  )       │  _       │          │ \        │          │
             &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  ,       │          │   │  ]       │          │          │          │          │
-            &sl 4      &trans     &trans     &kp COMMA  &trans        &kp RA(N9)  &kp K_COPY &trans     &trans     &kp DEL
+            &sl 4      &kp Z      &trans     &kp COMMA  &trans        &kp RA(N9)  &copy      &trans     &trans     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &sk LSHIFT &skq LGUI      &trans     &sk LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
