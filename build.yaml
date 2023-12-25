@@ -1,6 +1,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: cradio_left
+    shield: sweeple_left
   - board: nice_nano_v2
-    shield: cradio_right
+    shield: sweeple_right
+  - board: nice_nano_v2
+    shield: sweeple_dongle
