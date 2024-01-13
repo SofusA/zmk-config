@@ -1,6 +1,6 @@
 file_format: "1"
 id: sweeple
-name: sweeple
+name: Sweeple
 type: shield
 url: https://github.com/davidphilipbarr/Sweep
 requires: [pro_micro]
