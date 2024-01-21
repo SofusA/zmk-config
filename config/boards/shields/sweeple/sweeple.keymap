@@ -24,6 +24,30 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_aa {
+            timeout-ms = <50>;
+            key-positions = <10 26>; 
+            bindings = <&kp LBKT>;
+        };
+        combo_ae {
+            timeout-ms = <50>;
+            key-positions = <10 17>; 
+            bindings = <&kp SEMI>; 
+        };
+        combo_ao {
+            timeout-ms = <50>;
+            key-positions = <10 20>; 
+            bindings = <&kp SQT>; 
+        };
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <13 16>; 
+            bindings = <&kp ENTER>; 
+        };
+    };
+
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -62,11 +86,11 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp LBKT
+            &trans     &kp W      &kp F      &kp P      &trans         &trans     &kp L      &kp U      &kp Y      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp SEMI   &kp SQT    &kp ENTER
+            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp Q      &kp B      &kp J
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp SPACE  &kp ESC        &htl 3 1   &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -76,14 +100,14 @@
         symbol_1_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  #       │  $       │  @       │  =       │  %       │   │  (       │  <       │  ?       │  +       │  ~       │
-            &kp LS(N3) &kp RA(N4) &kp RA(N2) &kp RPAR   &kp PRCNT      &kp RA(N7) &kp NUBS   &kp UNDER  &kp MINUS  &tilde
+        //│          │  $       │  @       │  =       │          │   │          │  <       │  ?       │  +       │          │
+            &trans     &kp RA(N4) &kp RA(N2) &kp RPAR   &trans         &trans     &kp NUBS   &kp UNDER  &kp MINUS  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  |       │  "       │  :       │          │   │  {       │  -       │  &       │  /       │  *       │
-            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
+        //│  `       │  |       │  "       │  :       │  %       │   │  (       │  -       │  &       │  /       │  *       │
+            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp PRCNT     &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │  .       │          │   │  [       │          │          │          │          │
-            &sk LALT   &trans     &trans     &kp DOT    &trans        &kp RA(N8)  &trans     &trans     &trans     &kp DEL
+        //│          │  #       │          │  .       │          │   │  [       │ {        │  ~       │          │          │
+            &sk LALT   &kp LS(N3) &trans     &kp DOT    &trans        &kp RA(N8)  &kp RA(N7)  &tilde    &trans     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -93,14 +117,14 @@
         symbol_2_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │  }       │  >       │  !       │          │  ^       │
-            &trans     &trans     &trans     &paste     &trans        &kp RA(N0) &kp LS(NUBS) &kp EXCL &trans     &hat
+        //│          │          │          │          │          │   │          │  >       │  !       │          │          │
+            &trans     &trans     &trans     &paste     &trans         &trans   &kp LS(NUBS) &kp EXCL   &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │          │  '       │  ;       │          │   │  )       │  _       │          │ \        │          │
-            &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &trans   &kp RA(NUBS) &trans
+            &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &copy     &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │  ,       │          │   │  ]       │          │          │          │          │
-            &sl 4      &kp Z      &trans     &kp COMMA  &trans        &kp RA(N9)  &copy      &trans     &trans     &kp DEL
+        //│          │          │          │  ,       │          │   │  ]       │  }       │  ^       │          │          │
+            &sl 4      &kp Z      &trans     &kp COMMA  &trans        &kp RA(N9)  &kp RA(N0) &hat       &trans     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &sk LSHIFT &skq LGUI      &trans     &sk LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -110,8 +134,8 @@
         number_navigation_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ UP       │ PAGE UP  │          │ 
-            &trans     &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp UARW   &kp PG_UP  &kp K_BACK
+        //│          │  1       │  2       │  3       │          │   │          │ PAGE DN  │ UP       │ PAGE UP  │          │ 
+            &trans     &kp N1     &kp N2     &kp N3     &trans         &trans     &kp PG_DN  &kp UARW   &kp PG_UP  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  4       │  5       │  6       │          │   │ END      │ LEFT     │ DOWN     │ RIGHT    │          │
             &trans     &kp N4     &kp N5     &kp N6     &trans         &kp END    &kp LARW   &kp DARW   &kp RARW   &kp K_FORWARD
@@ -127,8 +151,8 @@
         settings_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │PROFILE 0 │   │          │          │          │          │          │
-           &bootloader &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &bootloader
+        //│          │          │          │          │          │   │          │          │          │          │          │
+           &bootloader &trans     &trans     &trans    &trans          &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │PROFILE 1 │   │          │          │          │          │          │
             &trans     &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans     &trans     
