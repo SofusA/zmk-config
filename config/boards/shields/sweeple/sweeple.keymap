@@ -24,40 +24,6 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_aa {
-            timeout-ms = <50>;
-            key-positions = <10 26>; 
-            bindings = <&kp LBKT>;
-        };
-        combo_ae {
-            timeout-ms = <50>;
-            key-positions = <10 17>; 
-            bindings = <&kp SEMI>; 
-        };
-        combo_ao {
-            timeout-ms = <50>;
-            key-positions = <10 19>; 
-            bindings = <&kp SQT>; 
-        };
-        combo_x {
-            timeout-ms = <50>;
-            key-positions = <20 29>; 
-            bindings = <&kp X>; 
-        };
-        combo_q {
-            timeout-ms = <50>;
-            key-positions = <21 28>; 
-            bindings = <&kp Q>; 
-        };
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <13 16>; 
-            bindings = <&kp ENTER>; 
-        };
-    };
-
     macros {
         tilde: tilde {
             label = "macro_tilde";
@@ -91,6 +57,50 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_aa {
+            timeout-ms = <50>;
+            key-positions = <17 18>; 
+            bindings = <&kp LBKT>;
+        };
+        combo_ae {
+            timeout-ms = <50>;
+            key-positions = <7 8>; 
+            bindings = <&kp SEMI>; 
+        };
+        combo_ao {
+            timeout-ms = <50>;
+            key-positions = <27 28>; 
+            bindings = <&kp SQT>; 
+        };
+        combo_x {
+            timeout-ms = <50>;
+            key-positions = <11 12>; 
+            bindings = <&kp X>; 
+        };
+        combo_q {
+            timeout-ms = <50>;
+            key-positions = <10 12>; 
+            bindings = <&kp Q>; 
+        };
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <16 17>; 
+            bindings = <&kp ENTER>; 
+        };
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <13 12>; 
+            bindings = <&kp TAB>; 
+        };
+        combo_delete {
+            timeout-ms = <50>;
+            key-positions = <26 27>; 
+            bindings = <&kp DEL>; 
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -116,12 +126,12 @@
         //│  `       │  |       │  "       │  :       │  %       │   │  (       │  -       │  &       │  /       │  *       │
             &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp PRCNT     &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  #       │  .       │          │   │          │  [       │  {       │  ~       │          │
+        //│          │          │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
             &sk LALT   &trans     &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+            >; 
         };
 
         symbol_2_layer {
@@ -133,10 +143,10 @@
         //│  ´       │          │  '       │  ;       │          │   │  )       │  _       │          │ \        │          │
             &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &copy     &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │  ,       │          │   │          │  ]       │  }       │  ^       │          │
-            &sl 4      &kp Z      &trans     &kp COMMA  &trans         &trans     &kp RA(N9) &kp RA(N0) &hat       &kp DEL
+        //│          │          │          │  ,       │          │   │          │  }       │  ]       │  ^       │          │
+            &sl 4      &kp Z      &trans     &kp COMMA  &trans         &trans     &kp RA(N0) &kp RA(N9) &hat       &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &sk LSHIFT &skq LGUI      &trans     &sk LCTRL
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -153,7 +163,7 @@
         //│          │  7       │  8       │  9       │          │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
             &trans     &kp N7     &kp N8     &kp N9     &trans         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp TAB    &trans         &trans     &kp ENTER 
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
