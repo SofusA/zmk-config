@@ -4,6 +4,14 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    input_configs {
+        compatible = "zmk,input-configs";
+        mmv {
+            device = <&mmv>;
+            scale-multiplier = <3>;
+        };
+    };
+
     behaviors {
         htl: hold_tap_leader {
             label = "leader_hold_tap";
