@@ -116,6 +116,18 @@
             layers = <0>;
             bindings = <&kp DEL>; 
         };
+        combo_paste {
+            timeout-ms = <30>;
+            key-positions = <2 3>; 
+            layers = <0>;
+            bindings = <&paste>; 
+        }
+        combo_copy {
+            timeout-ms = <30>;
+            key-positions = <22 23>; 
+            layers = <0>;
+            bindings = <&copy>; 
+        }
     };
 
     keymap {
@@ -155,7 +167,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │  >       │  !       │          │          │
-            &trans     &trans     &trans     &paste     &trans         &trans   &kp LS(NUBS) &kp EXCL   &trans     &trans
+            &trans     &trans     &trans     &trans     &trans         &trans   &kp LS(NUBS) &kp EXCL   &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ´       │          │  '       │  ;       │          │   │  )       │  _       │          │ \        │          │
             &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &copy     &kp RA(NUBS) &trans
