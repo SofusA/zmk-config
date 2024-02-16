@@ -120,14 +120,14 @@
             timeout-ms = <30>;
             key-positions = <2 3>; 
             layers = <0>;
-            bindings = <&paste>; 
-        }
+            bindings = <&kp LC(V)>; 
+        };
         combo_copy {
             timeout-ms = <30>;
             key-positions = <22 23>; 
             layers = <0>;
-            bindings = <&copy>; 
-        }
+            bindings = <&kp LC(C)>; 
+        };
     };
 
     keymap {
