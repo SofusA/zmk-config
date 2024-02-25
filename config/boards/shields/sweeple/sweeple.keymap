@@ -9,7 +9,7 @@
         compatible = "zmk,input-configs";
         mmv {
             device = <&mmv>;
-            scale-multiplier = <3>;
+            scale-multiplier = <10>;
         };
     };
 
