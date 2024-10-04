@@ -1,10 +1,21 @@
 #include "sweeple.dtsi"
 
 / {
-	chosen {
-		zephyr,display = &oled;
-	};
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zephyr,display = &oled;
+    };
+
+    mock_kscan: kscan_1 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
 };
+
+/delete-node/ &kscan0;   // only required if the dongle uses a 
+                         // different board than the peripherals
 
 &pro_micro_i2c {
     status = "okay";
