@@ -5,6 +5,6 @@ include:
   - board: nice_nano_v2
     shield: sweeple_right
   - board: nice_nano_v2
-    shield: sweeple_dongle
+    shield: sweeple_dongle dongle_display
   - board: nice_nano_v2
     shield: settings_reset
