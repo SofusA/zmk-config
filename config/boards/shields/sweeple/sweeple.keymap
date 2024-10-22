@@ -138,8 +138,8 @@
         //│  `       │  |       │  "       │  :       │          │   │          │  -       │  (       │  /       │  *       │
             &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &trans     &kp FSLH   &kp ASTRK  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  %       │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
-            &sk LALT   &kp PRCNT  &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &trans
+        //│          │  %       │  #       │  .       │          │   │          │  {       │  [       │  ~       │  &       │
+            &sk LALT   &kp PRCNT  &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &kp CARET
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -152,11 +152,11 @@
         //│          │          │          │          │          │   │          │  >       │  !       │          │          │
             &trans     &trans     &trans     &trans     &trans         &trans   &kp LS(NUBS) &kp EXCL   &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │  &       │  '       │  ;       │          │   │          │  _       │ )         │  \       │          │
-            &kp EQUAL  &kp CARET  &kp BSLH   &kp LS(COMMA) &trans      &trans  &kp LS(FSLH)  &kp LPAR    &kp RA(NUBS) &trans
+        //│  ´       │          │  '       │  ;       │          │   │          │  _       │  )       │  \       │          │
+            &kp EQUAL  &trans  &kp BSLH   &kp LS(COMMA) &trans         &trans   &kp LS(FSLH) &kp LPAR   &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  ,       │          │   │          │  }       │  ]       │  ^       │          │
-            &sl 4      &kp Z      &trans     &kp COMMA  &trans         &trans     &kp RA(N0) &kp RA(N9) &hat       &trans
+            &sl 4      &trans     &trans     &kp COMMA  &trans         &trans     &kp RA(N0) &kp RA(N9) &hat       &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
