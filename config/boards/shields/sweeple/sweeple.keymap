@@ -120,9 +120,9 @@
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &trans     &kp W      &kp F      &kp P      &trans         &trans     &kp L      &kp U      &kp Y      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp A      &kp R      &kp S      &kp T      &trans         &trans     &kp N      &kp E      &kp I      &kp O
+            &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp G      &kp V      &kp C      &kp D      &trans         &trans     &kp H      &kp K      &kp B      &kp M
+            &kp Z      &kp V      &kp C      &kp D      &trans         &trans     &kp H      &kp K      &kp B      &kp J
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            &lt 5 SPACE  &lt 6 ESC      &htl 3 1   &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -132,14 +132,14 @@
         symbol_1_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  $       │  @       │  =       │          │   │          │  <       │  ?       │  -       │          │
-            &trans     &kp RA(N4) &kp RA(N2) &kp RPAR   &trans         &trans     &kp NUBS   &kp UNDER  &kp FLSH   &trans
+        //│          │  $       │  @       │  =       │          │   │          │  <       │  ?       │  +       │          │
+            &trans     &kp RA(N4) &kp RA(N2) &kp RPAR   &trans         &trans     &kp NUBS   &kp UNDER  &kp MINUS  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  |       │  "       │  :       │          │   │          │  (       │  &       │  /       │  *       │
-            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &trans     &kp ASTRK  &kp CARET  &kp AMPS   &kp PIPE
+        //│  `       │  |       │  "       │  :       │  %       │   │  (       │  -       │  &       │  /       │  *       │
+            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &kp PRCNT     &kp ASTRK  &kp FSLH   &kp CARET  &kp AMPS   &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │ %        │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
-            &sk LALT   &kp PRCNT  &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &trans
+        //│          │          │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
+            &sk LALT   &trans     &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -149,11 +149,11 @@
         symbol_2_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │  >       │  !       │  _       │          │
-            &trans     &trans     &trans     &trans     &trans         &trans   &kp LS(NUBS) &kp EXCL   &kp LS(FSLH) &trans
+        //│          │          │          │          │          │   │          │  >       │  !       │          │          │
+            &trans     &trans     &trans     &trans     &trans         &trans   &kp LS(NUBS) &kp EXCL   &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │          │  '       │  ;       │          │   │          │  )       │  +       │  \       │          │
-            &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &trans     &kp LPAR   &kp MINUS  &kp RA(NUBS) &trans
+        //│  ´       │          │  '       │  ;       │          │   │  )       │  _       │          │ \        │          │
+            &kp EQUAL  &trans     &kp BSLH   &kp LS(COMMA) &trans      &kp LPAR &kp LS(FSLH) &trans    &kp RA(NUBS) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  ,       │          │   │          │  }       │  ]       │  ^       │          │
             &sl 4      &kp Z      &trans     &kp COMMA  &trans         &trans     &kp RA(N0) &kp RA(N9) &hat       &trans
@@ -169,8 +169,8 @@
         //│          │  1       │  2       │  3       │          │   │          │ PAGE DN  │ UP       │ PAGE UP  │          │ 
             &trans     &kp N1     &kp N2     &kp N3     &trans         &trans     &kp PG_DN  &kp UARW   &kp PG_UP  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  0       │  4       │  5       │  6       │          │   │          │ LEFT     │ DOWN     │ RIGHT    │          │
-            &kp N0     &kp N4     &kp N5     &kp N6     &trans        &trans  &kp LARW   &kp DARW   &kp RARW   &trans
+        //│          │  4       │  5       │  6       │  0       │   │ END      │ LEFT     │ DOWN     │ RIGHT    │          │
+            &trans     &kp N4     &kp N5     &kp N6     &kp N0         &kp END    &kp LARW   &kp DARW   &kp RARW   &kp K_FORWARD
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  7       │  8       │  9       │          │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
             &trans     &kp N7     &kp N8     &kp N9     &trans         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
@@ -221,7 +221,7 @@
             &trans     &trans     &trans     &trans     &trans         &trans     &kp LC(N1) &kp LC(N2) &kp LC(N3) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-       &kp K_FORWARD &kp K_BACK   &kp TAB    &kp ENTER  &trans        &trans   &kp LS(LC(TAB)) &kp LC(W) &kp LC(TAB) &trans
+            &trans     &trans     &kp TAB    &kp ENTER  &trans    &kp LS(LC(W)) &kp LS(LC(TAB)) &kp LC(W) &kp LC(TAB) &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &kp LC(Z)  &copy      &paste     &trans         &trans     &trans     &trans  &kp LS(LC(I)) &trans
