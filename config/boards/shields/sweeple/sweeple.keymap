@@ -99,6 +99,18 @@
             layers = <0>;
             bindings = <&kp Q>; 
         };
+        combo_z {
+            timeout-ms = <30>;
+            key-positions = <1 2>; 
+            layers = <0>;
+            bindings = <&kp Z>; 
+        };
+        combo_j {
+            timeout-ms = <30>;
+            key-positions = <26 27>; 
+            layers = <0>;
+            bindings = <&kp J>; 
+        };
     };
 
     keymap {
@@ -158,7 +170,7 @@
             &trans     &kp N1     &kp N2     &kp N3     &trans         &trans     &kp PG_DN  &kp UARW   &kp PG_UP  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0       │  4       │  5       │  6       │          │   │          │ LEFT     │ DOWN     │ RIGHT    │          │
-            &kp N0     &kp N4     &kp N5     &kp N6     &trans        &kp trans  &kp LARW   &kp DARW   &kp RARW   &trans
+            &kp N0     &kp N4     &kp N5     &kp N6     &trans        &trans  &kp LARW   &kp DARW   &kp RARW   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  7       │  8       │  9       │          │   │          │ VOl DOWN │ VOL UP   │PLAY PAUSE│          │
             &trans     &kp N7     &kp N8     &kp N9     &trans         &trans  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
