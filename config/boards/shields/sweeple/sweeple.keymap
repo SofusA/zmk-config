@@ -101,15 +101,27 @@
         };
         combo_z {
             timeout-ms = <30>;
-            key-positions = <1 2>; 
+            key-positions = <1 2>;
             layers = <0>;
             bindings = <&kp Z>; 
         };
         combo_j {
             timeout-ms = <30>;
-            key-positions = <26 27>; 
+            key-positions = <26 27>;
             layers = <0>;
             bindings = <&kp J>; 
+        };
+        combo_k {
+            timeout-ms = <30>;
+            key-positions = <16 7>;
+            layers = <0>;
+            bindings = <&kp K>; 
+        };
+        combo_v {
+            timeout-ms = <30>;
+            key-positions = <12 13>;
+            layers = <0>;
+            bindings = <&kp V>; 
         };
     };
 
@@ -122,9 +134,9 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp A      &kp R      &kp S      &kp T      &trans         &trans     &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp G      &kp V      &kp C      &kp D      &trans         &trans     &kp H      &kp K      &kp B      &kp M
+            &trans     &kp G      &kp C      &kp D      &trans         &trans     &kp H      &kp M      &kp B      &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt 5 SPACE  &lt 6 ESC      &htl 3 1   &kp BSPC
+                                           &lt 4 SPACE  &lt 5 ESC      &htl 3 1   &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -135,11 +147,11 @@
         //│          │  $       │  @       │  =       │          │   │          │  <       │  ?       │  +       │          │
             &trans     &kp RA(N4) &kp RA(N2) &kp RPAR   &trans         &trans     &kp NUBS   &kp UNDER  &kp MINUS  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  `       │  |       │  "       │  :       │          │   │          │  -       │  (       │  /       │  *       │
-            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &trans     &kp FSLH   &kp ASTRK  &kp AMPS   &kp PIPE
+        //│  `       │  |       │  "       │  :       │          │   │          │  -       │  (       │  /       │  &       │
+            &btick &kp RA(EQUAL)  &kp LS(N2) &kp LS(DOT) &trans        &trans     &kp FSLH   &kp ASTRK  &kp AMPS   &kp CARET 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  %       │  #       │  .       │          │   │          │  {       │  [       │  ~       │  &       │
-            &sk LALT   &kp PRCNT  &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &kp CARET
+        //│          │  %       │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
+            &trans     &kp PRCNT  &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -152,11 +164,11 @@
         //│          │          │          │          │          │   │          │  >       │  !       │          │          │
             &trans     &trans     &trans     &trans     &trans         &trans   &kp LS(NUBS) &kp EXCL   &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ´       │          │  '       │  ;       │          │   │          │  _       │  )       │  \       │          │
-            &kp EQUAL  &trans  &kp BSLH   &kp LS(COMMA) &trans         &trans   &kp LS(FSLH) &kp LPAR   &kp RA(NUBS) &trans
+        //│  ´       │          │  '       │  ;       │          │   │          │  _       │  )       │  \       │  *       │
+            &kp EQUAL  &trans  &kp BSLH   &kp LS(COMMA) &trans         &trans   &kp LS(FSLH) &kp LPAR   &kp RA(NUBS) &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │  ,       │          │   │          │  }       │  ]       │  ^       │          │
-            &sl 4      &trans     &trans     &kp COMMA  &trans         &trans     &kp RA(N0) &kp RA(N9) &hat       &trans
+            &trans     &trans     &trans     &kp COMMA  &trans         &trans     &kp RA(N0) &kp RA(N9) &hat       &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -180,23 +192,6 @@
             >;
         };
         
-        settings_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans    &bootloader &trans     &trans     &trans         &trans     &trans     &trans     &trans    &bootloader
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │PROFILE 1 │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans     &trans     
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR  &trans         &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to 0          &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
         mouse_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
