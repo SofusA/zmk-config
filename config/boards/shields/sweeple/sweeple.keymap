@@ -67,64 +67,6 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_aa {
-            timeout-ms = <30>;
-            key-positions = <17 18>; 
-            layers = <0>;
-            bindings = <&kp LBKT>;
-        };
-        combo_ae {
-            timeout-ms = <30>;
-            key-positions = <7 8>; 
-            layers = <0>;
-            bindings = <&kp SEMI>; 
-        };
-        combo_ao {
-            timeout-ms = <30>;
-            key-positions = <27 28>; 
-            layers = <0>;
-            bindings = <&kp SQT>; 
-        };
-        combo_x {
-            timeout-ms = <30>;
-            key-positions = <11 12>; 
-            layers = <0>;
-            bindings = <&kp X>; 
-        };
-        combo_q {
-            timeout-ms = <30>;
-            key-positions = <21 22>; 
-            layers = <0>;
-            bindings = <&kp Q>; 
-        };
-        combo_z {
-            timeout-ms = <30>;
-            key-positions = <1 2>;
-            layers = <0>;
-            bindings = <&kp Z>; 
-        };
-        combo_j {
-            timeout-ms = <30>;
-            key-positions = <26 27>;
-            layers = <0>;
-            bindings = <&kp J>; 
-        };
-        combo_k {
-            timeout-ms = <30>;
-            key-positions = <16 17>;
-            layers = <0>;
-            bindings = <&kp K>;
-        };
-        combo_v {
-            timeout-ms = <30>;
-            key-positions = <12 13>;
-            layers = <0>;
-            bindings = <&kp V>; 
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -136,7 +78,24 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &trans     &kp G      &kp C      &kp D      &trans         &trans     &kp H      &kp M      &kp B      &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt 4 SPACE  &lt 5 ESC      &htl 3 1   &kp BSPC
+                                           &lt 5 SPACE  &kp ESC        &htl 3 2   &hlt 2 5 
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        alpha_2_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &kp Q      &kp X      &kp V      &trans         &trans     &kp K      &kp J      &kp LBKT   &kp SEMI
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &kp Z      &trans         &trans     &kp SQT    &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &kp BSPC   &kp DEL        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -153,7 +112,7 @@
         //│          │  %       │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
             &trans     &kp PRCNT  &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
+                                            &skq LSHIFT &skq LGUI      &sl 3      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >; 
         };
@@ -221,9 +180,8 @@
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &kp LC(Z)  &copy      &paste     &trans         &trans     &trans     &trans  &kp LS(LC(I)) &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &kp DEL
+                                             &kp BSPC   &kp DEL        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
-        };
     };
 };
