@@ -4,9 +4,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define HRML(k1,k2,k3) &htl LSHFT k1 &htl LGUI k2 &htl LCTRL k3
-#define HRMR(k1,k2,k3) &htl RCTRL k1 &htl RGUI k2 &htl RSHFT k3
-
 / {
     input_configs {
         compatible = "zmk,input-configs";
@@ -111,7 +108,7 @@
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             &trans     &kp W      &kp F      &kp P      &trans         &trans     &kp L      &kp U      &kp Y      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &kp A      HRML(R,    S,         T)         &kp G          &kp M      MRMR(N,    E,         I)      &kp O
+            &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp V      &kp C      &kp D      &trans         &trans     &kp H      &kp K      &kp B      &kp J
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
@@ -132,7 +129,7 @@
         //│          │          │  #       │  .       │          │   │          │  {       │  [       │  ~       │          │
             &sk LALT   &trans     &kp LS(N3) &kp DOT    &trans         &trans     &kp RA(N7) &kp RA(N8) &tilde     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &skq LSHIFT &trans         &sl 2      &trans
+                                            &skq LSHIFT &skq LGUI      &sl 2      &skq LCTRL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >; 
         };
