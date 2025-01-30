@@ -14,6 +14,15 @@
     };
 
     behaviors {
+        htt: hold_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         htl: hold_tap_leader {
             label = "leader_hold_tap";
             compatible = "zmk,behavior-hold-tap";
@@ -100,7 +109,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp V      &kp C      &kp D      &kp X          &kp Q      &kp H      &kp K      &kp B      &kp J
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPACE  &lt 4 ESC      &htl 3 1   &kp BSPC
+                                     &htt LSHIFT SPACE  &lt 4 ESC      &htl 3 1   &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
