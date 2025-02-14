@@ -20,11 +20,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "battery_status.h"
 
-#if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY)
-    #define SOURCE_OFFSET 1
-#else
-    #define SOURCE_OFFSET 0
-#endif
+#define SOURCE_OFFSET 0
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
