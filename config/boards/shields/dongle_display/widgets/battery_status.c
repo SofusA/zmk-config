@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2024 The ZMK Contributors
  *
@@ -6,7 +7,6 @@
 
 #include <zephyr/kernel.h>
 #include <zephyr/bluetooth/services/bas.h>
-
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
@@ -18,6 +18,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/event_manager.h>
 #include <zmk/usb.h>
 
+#include <lvgl.h>
 #include "battery_status.h"
 
 #define SOURCE_OFFSET 0
@@ -29,9 +30,8 @@ struct battery_state {
     uint8_t level;
     bool usb_present;
 };
-    
-static lv_color_t battery_image_buffer[ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET][5 * 8];
 
+static lv_color_t battery_image_buffer[ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET][5 * 8];
 
 static void draw_battery(lv_obj_t *canvas, uint8_t level, bool usb_present) {
     lv_canvas_fill_bg(canvas, lv_color_black(), LV_OPA_COVER);
@@ -55,23 +55,23 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level, bool usb_present) {
     lv_layer_t layer;
     lv_canvas_init_layer(canvas, &layer);
 
-    lv_area_t coords;
+    lv_area_t a;
 
     if (level <= 10 || usb_present) {
-        coords = (lv_area_t){ .x1 = 1, .y1 = 2, .x2 = 1 + 3 - 1, .y2 = 2 + 5 - 1 };
-        lv_draw_rect(&layer, &rect_fill_dsc, &coords);
+        a.x1 = 1; a.y1 = 2; a.x2 = 1 + 3 - 1; a.y2 = 2 + 5 - 1;
+        lv_draw_rect(&layer, &rect_fill_dsc, &a);
     } else if (level <= 30) {
-        coords = (lv_area_t){ .x1 = 1, .y1 = 2, .x2 = 1 + 3 - 1, .y2 = 2 + 4 - 1 };
-        lv_draw_rect(&layer, &rect_fill_dsc, &coords);
+        a.x1 = 1; a.y1 = 2; a.x2 = 1 + 3 - 1; a.y2 = 2 + 4 - 1;
+        lv_draw_rect(&layer, &rect_fill_dsc, &a);
     } else if (level <= 50) {
-        coords = (lv_area_t){ .x1 = 1, .y1 = 2, .x2 = 1 + 3 - 1, .y2 = 2 + 3 - 1 };
-        lv_draw_rect(&layer, &rect_fill_dsc, &coords);
+        a.x1 = 1; a.y1 = 2; a.x2 = 1 + 3 - 1; a.y2 = 2 + 3 - 1;
+        lv_draw_rect(&layer, &rect_fill_dsc, &a);
     } else if (level <= 70) {
-        coords = (lv_area_t){ .x1 = 1, .y1 = 2, .x2 = 1 + 3 - 1, .y2 = 2 + 2 - 1 };
-        lv_draw_rect(&layer, &rect_fill_dsc, &coords);
+        a.x1 = 1; a.y1 = 2; a.x2 = 1 + 3 - 1; a.y2 = 2 + 2 - 1;
+        lv_draw_rect(&layer, &rect_fill_dsc, &a);
     } else if (level <= 90) {
-        coords = (lv_area_t){ .x1 = 1, .y1 = 2, .x2 = 1 + 3 - 1, .y2 = 2 + 1 - 1 };
-        lv_draw_rect(&layer, &rect_fill_dsc, &coords);
+        a.x1 = 1; a.y1 = 2; a.x2 = 1 + 3 - 1; a.y2 = 2 + 1 - 1;
+        lv_draw_rect(&layer, &rect_fill_dsc, &a);
     }
 
     lv_canvas_finish_layer(canvas, &layer);
@@ -82,12 +82,13 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         return;
     }
     LOG_DBG("source: %d, level: %d, usb: %d", state.source, state.level, state.usb_present);
+
     lv_obj_t *symbol = lv_obj_get_child(widget, state.source * 2);
     lv_obj_t *label = lv_obj_get_child(widget, state.source * 2 + 1);
 
     draw_battery(symbol, state.level, state.usb_present);
     lv_label_set_text_fmt(label, "%4u%%", state.level);
-    
+
     if (state.level > 0 || state.usb_present) {
         lv_obj_clear_flag(symbol, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(label, LV_OBJ_FLAG_HIDDEN);
@@ -112,16 +113,16 @@ static struct battery_state peripheral_battery_status_get_state(const zmk_event_
 
 static struct battery_state central_battery_status_get_state(const zmk_event_t *eh) {
     const struct zmk_battery_state_changed *ev = as_zmk_battery_state_changed(eh);
-    return (struct battery_state) {
+    return (struct battery_state){
         .source = 0,
         .level = (ev != NULL) ? ev->state_of_charge : zmk_battery_state_of_charge(),
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
         .usb_present = zmk_usb_is_powered(),
-#endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
+#endif
     };
 }
 
-static struct battery_state battery_status_get_state(const zmk_event_t *eh) { 
+static struct battery_state battery_status_get_state(const zmk_event_t *eh) {
     if (as_zmk_peripheral_battery_state_changed(eh) != NULL) {
         return peripheral_battery_status_get_state(eh);
     } else {
@@ -136,24 +137,23 @@ ZMK_SUBSCRIPTION(widget_dongle_battery_status, zmk_peripheral_battery_state_chan
 
 #if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY)
 #if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-
 ZMK_SUBSCRIPTION(widget_dongle_battery_status, zmk_battery_state_changed);
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
 ZMK_SUBSCRIPTION(widget_dongle_battery_status, zmk_usb_conn_state_changed);
-#endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
-#endif /* !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL) */
-#endif /* IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY) */
+#endif
+#endif
+#endif
 
 int zmk_widget_dongle_battery_status_init(struct zmk_widget_dongle_battery_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
 
     lv_obj_set_size(widget->obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-    
+
     for (int i = 0; i < ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET; i++) {
         lv_obj_t *image_canvas = lv_canvas_create(widget->obj);
         lv_obj_t *battery_label = lv_label_create(widget->obj);
 
-        lv_canvas_set_buffer(image_canvas, battery_image_buffer[i], 5, 8, LV_IMG_CF_TRUE_COLOR);
+        lv_canvas_set_buffer(image_canvas, battery_image_buffer[i], 5, 8, LV_COLOR_FORMAT_NATIVE);
 
         lv_obj_align(image_canvas, LV_ALIGN_TOP_RIGHT, 0, i * 10);
         lv_obj_align(battery_label, LV_ALIGN_TOP_RIGHT, -7, i * 10);
