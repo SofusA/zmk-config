@@ -6,12 +6,15 @@ if SHIELD_SWEEPLE_DONGLE
         default y
 
     config ZMK_DISPLAY
-        select LV_USE_CONT
-        select LV_FONT_MONTSERRAT_26
-        select LV_FONT_MONTSERRAT_16
         select LV_USE_LABEL
-        select LV_USE_IMG
-
+        select LV_USE_IMAGE
+        select LV_USE_CANVAS
+        select LV_USE_ANIMIMG 
+        select LV_USE_ANIMATION
+        select LV_USE_LINE 
+        select LV_FONT_UNSCII_8
+        select ZMK_WPM
+        
     config I2C
     	default y
 

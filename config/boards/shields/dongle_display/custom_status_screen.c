@@ -22,12 +22,14 @@ lv_obj_t *zmk_display_status_screen() {
     screen = lv_obj_create(NULL);
 
     lv_style_init(&global_style);
+    lv_style_set_bg_color(&global_style, lv_color_white());
+    lv_style_set_bg_opa(&global_style, LV_OPA_COVER);
+    lv_style_set_text_color(&global_style, lv_color_black());
     lv_style_set_text_font(&global_style, &lv_font_unscii_8);
     lv_style_set_text_letter_space(&global_style, 1);
     lv_style_set_text_line_space(&global_style, 1);
     lv_obj_add_style(screen, &global_style, LV_PART_MAIN);
-    
-    
+        
     zmk_widget_bongo_cat_init(&bongo_cat_widget, screen);
     lv_obj_align(zmk_widget_bongo_cat_obj(&bongo_cat_widget), LV_ALIGN_BOTTOM_RIGHT, 0, -7);
 
