@@ -4,26 +4,6 @@ if SHIELD_SWEEPLE_DONGLE
 
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
-
-    config ZMK_DISPLAY
-        select LV_USE_LABEL
-        select LV_USE_IMAGE
-        select LV_USE_CANVAS
-        select LV_USE_ANIMIMG 
-        select LV_USE_ANIMATION
-        select LV_USE_LINE 
-        select LV_FONT_UNSCII_8
-        select ZMK_WPM
-        
-    config I2C
-    	default y
-
-    config SSD1306
-    	default y
-
-    config SSD1306_REVERSE_MODE
-        bool
-    	default n
 endif
 
 if SHIELD_SWEEPLE_LEFT || SHIELD_SWEEPLE_RIGHT || SHIELD_SWEEPLE_DONGLE
