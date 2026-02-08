@@ -27,11 +27,8 @@ lv_obj_t *zmk_display_status_screen() {
     zmk_widget_bongo_cat_init(&bongo_cat_widget, screen);
     zmk_widget_dongle_battery_status_init(&dongle_battery_status_widget, screen);
 
-    lv_obj_align(zmk_widget_bongo_cat_obj(&bongo_cat_widget), LV_ALIGN_RIGHT_MID, -6, 5);
+    lv_obj_align(zmk_widget_bongo_cat_obj(&bongo_cat_widget), LV_ALIGN_RIGHT_MID, -6, 3);
     lv_obj_align(zmk_widget_dongle_battery_status_obj(&dongle_battery_status_widget), LV_ALIGN_LEFT_MID, 0, 0);
-
-    // Centered battery status
-    // lv_obj_align(zmk_widget_dongle_battery_status_obj(&dongle_battery_status_widget), LV_ALIGN_CENTER, 0, 0);
 
     return screen;
 }
